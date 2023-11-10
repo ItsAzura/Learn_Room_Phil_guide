@@ -1,11 +1,13 @@
 package com.example.learnroomphilguide
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 
 //định nghĩa interface ContactDao để thao tác với dữ liệu Contact trong Room database.
+@Dao
 interface ContactDao {
     @Upsert //Chèn hoặc cập nhật một đối tượng Contact.
     suspend fun UpsertContact(contact: Contact)
